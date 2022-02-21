@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "commands": [
+    {
+      "command": "test-command",
+      "action": {
+        "name": "TestCommand",
+        "file_type": "folder",
+        "childs": []
+      }
+    },
+    {
+      "command": "test-view",
+      "action": {
+        "name": "TestView",
+        "file_type": "folder",
+        "childs": []
+      }
+    }
+  ]
+}

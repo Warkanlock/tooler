@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "commands": [
+    {
+      "command": "component",
+      "action": {
+        "name": "ExampleComponent",
+        "file_type": "folder",
+        "childs": [
+          {
+            "name": "IndexFolder",
+            "file_type": "folder",
+            "childs": [
+              {
+                "name": "index.js",
+                "file_type": "file",
+                "childs": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "command": "view",
+      "action": {
+        "name": "ExampleView",
+        "file_type": "folder",
+        "childs": []
+      }
+    }
+  ]
+}
