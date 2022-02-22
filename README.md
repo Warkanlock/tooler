@@ -45,8 +45,8 @@ Creating scaffolding and folder>file structures is sometimes a headache, so I cr
 
 - [x] Basic configuration
 - [ ] Directed output
-- [ ] Basing content on file creation
-- [ ] Customize the commands (not only for creation)
+- [ ] File creation with example content
+- [ ] Customize commands (not only for creation)
 - [ ] More tests
 
 > Written and maintained by Warkanlock as PoC
