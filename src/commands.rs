@@ -1,8 +1,7 @@
+use crate::json_serializer::{CommandConfiguration, CommandList};
 use std::{fs::File, path::Path, process};
 
-use crate::json_serializer::{CommandConfiguration, CommandList};
-
-const BASE_PATH: &str = "./src/target/";
+const BASE_PATH: &str = std::env!("BASE_PATH");
 
 pub fn all(commands: &[CommandList]) {
     for command in commands {
@@ -30,6 +29,11 @@ fn run_on_childs(
     action: &CommandConfiguration,
     relative_child: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
+    // let base_path = std::env::var("BASE_PATH").unwrap_or_else(|e| {
+    //     eprintln!("Error trying to read output directory: {}", e);
+    //     process::exit(1);
+    // });
+
     let final_name = format!("{}{}{}", BASE_PATH, relative_child, action.name);
 
     // create root

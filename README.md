@@ -21,6 +21,20 @@ OPTIONS:
 1. Create your own replicable scaffolding configuration using the JSON configuration file.
 2. Run `tooler` to create folders or files on demand.
 
+# Setup
+
+In order to run the program you need to specify two environment variables
+
+Configuration path
+```
+export CONFIG_PATH=./src/config.json
+```
+
+Directory output for commands (folder must exists)
+```
+BASE_PATH=./src/target/
+```
+
 # Inspiration
 
 Creating scaffolding and folder>file structures is sometimes a headache, so I created this tool as a solution for that wasted time creating files using commands like `mkdir test && cd test && touch ...`.
