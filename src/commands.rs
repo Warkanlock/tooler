@@ -54,7 +54,7 @@ fn run_on_childs(
     };
 
     println!(
-        "\x1b[93m{}\x1b[0m created on \x1b[43m{}\x1b[0m - ✔️",
+        "\x1b[93m{}\x1b[0m created on \x1b[40m{}\x1b[0m - ✔️",
         action.file_type, final_name
     );
 
