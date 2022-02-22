@@ -27,7 +27,7 @@ In order to run the program you need to specify two environment variables
 
 Configuration path (you can point to different paths)
 ```
-export CONFIG_PATH=./src/example.config.json
+export CONFIG_PATH=./src/config/example.config.json
 ```
 
 Directory output for commands (folder must exists before running the commands)
