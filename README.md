@@ -1,4 +1,4 @@
-# Tooler: scaffolding made easy
+# Toolers: scaffolding made easy
 
 Create a controlled ``folder>file`` structure for your team to use as a configuration file to prevent team mattes from creating their own structures or files by hand. Keep the configuration synchronized as a source of truth for the creation of ``components``, ``views``, ``services`` or whatever file you want to create in your project. Add more commands inside the configuration file as an action object.
 
