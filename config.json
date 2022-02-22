@@ -1,0 +1,33 @@
+{
+  "version": "0.1",
+  "commands": [
+    {
+      "command": "command",
+      "action": {
+        "name": "RootFolder",
+        "file_type": "folder",
+        "childs": [
+          {
+            "name": "ChildFolder",
+            "file_type": "folder",
+            "childs": [
+              {
+                "name": "somefile.someformat",
+                "file_type": "file",
+                "childs": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "command": "another_command",
+      "action": {
+        "name": "RootFolderTwo",
+        "file_type": "folder",
+        "childs": []
+      }
+    }
+  ]
+}
