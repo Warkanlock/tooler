@@ -39,15 +39,14 @@ BASE_PATH=./src/target/
 
 # Inspiration
 
-Creating scaffolding and folder>file structures is sometimes a headache, so I created this tool as a solution for that wasted time creating files using commands like `mkdir test && cd test && touch ...`.
+Creating scaffolding and folder>file structures is sometimes a headache, so I created this tool as a solution for that wasted time creating files using commands like `mkdir test && cd test && touch ...`
 
 # Next Steps
 
-[x] Basic configuration
-[] Directed output
-[] Basing content on file creation
-[] Customize the commands (not only for creation)
-[] More tests
+- [x] Basic configuration
+- [ ] Directed output
+- [ ] Basing content on file creation
+- [ ] Customize the commands (not only for creation)
+- [ ] More tests
 
 > Written and maintained by Warkanlock as PoC
-````
