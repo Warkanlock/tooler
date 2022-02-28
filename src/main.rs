@@ -112,11 +112,15 @@ mod tests {
                 let output_path = std::env::var("BASE_PATH").unwrap();
 
                 let configuration = json_serializer::read_from_file(config_path).unwrap();
-
-                commands::run_command(&configuration.commands[0]);
-
                 let output_path_dir = std::path::Path::new(&output_path);
 
+                // create tmp output dir
+                std::fs::create_dir(output_path_dir).unwrap();
+
+                // run command
+                commands::run_command(&configuration.commands[0]);
+
+                // check if file got created
                 assert_eq!(std::path::Path::exists(output_path_dir), true);
 
                 // delete after test
