@@ -1,4 +1,5 @@
 use crate::json_serializer::{CommandConfiguration, CommandList};
+use std::io::prelude::*;
 use std::{fs::File, path::Path, process};
 
 const BASE_PATH: &str = std::env!("BASE_PATH");
@@ -40,10 +41,15 @@ fn run_on_childs(
             });
         }
         "file" => {
-            File::create(Path::new(&final_name)).unwrap_or_else(|e| {
+            let mut file = File::create(Path::new(&final_name)).unwrap_or_else(|e| {
                 eprintln!("Error trying to create a file: {}", e);
                 process::exit(1);
             });
+            if action.example.is_some() {
+                file.write_all(&(action.example).as_ref().unwrap().as_bytes())
+                    .unwrap();
+            }
+            file.sync_all()?;
         }
         _ => panic!("No file type available"),
     };

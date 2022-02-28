@@ -17,6 +17,7 @@ pub struct CommandConfiguration {
     pub name: String,
     pub childs: Vec<CommandConfiguration>,
     pub file_type: String,
+    pub example : Option<String>,
 }
 
 #[derive(Deserialize, Debug, PartialEq)]

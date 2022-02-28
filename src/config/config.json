@@ -1,24 +1,20 @@
 {
   "version": "0.1",
-  "commands": [
-    {
+  "commands": [{
       "command": "command",
       "action": {
         "name": "RootFolder",
         "file_type": "folder",
-        "childs": [
-          {
-            "name": "ChildFolder",
-            "file_type": "folder",
-            "childs": [
-              {
-                "name": "somefile.someformat",
-                "file_type": "file",
-                "childs": []
-              }
-            ]
-          }
-        ]
+        "childs": [{
+          "name": "ChildFolder",
+          "file_type": "folder",
+          "childs": [{
+            "name": "somefile.someformat",
+            "file_type": "file",
+            "childs": [],
+            "example": "import React from 'react'"
+          }]
+        }]
       }
     },
     {

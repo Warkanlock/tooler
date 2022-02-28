@@ -8,7 +8,7 @@ use crate::json_serializer::CommandList;
 #[derive(Parser, Debug)]
 #[clap(
     name = "~ Tooler ~",
-    author = "Warkanlock - 0.0.1",
+    author = "Warkanlock",
     about = "Create a controlled ``folder>file`` structure for your team to use as a configuration file to prevent team mattes from creating their own structures or files by hand. Keep the configuration synchronized as a source of truth for the creation of ``components``, ``views``, ``services`` or whatever in your project. Add more commands inside the configuration file as an action object."
 )]
 struct Context {
