@@ -123,10 +123,8 @@ mod tests {
                 // check if file got created
                 assert_eq!(std::path::Path::exists(output_path_dir), true);
 
-                // delete after test
-                std::fs::remove_dir_all(output_path_dir)
-                    .and_then(|_| std::fs::create_dir(output_path_dir))
-                    .unwrap();
+                // delete tmp output dir
+                std::fs::remove_dir_all(output_path_dir).unwrap();
             },
         )
     }
