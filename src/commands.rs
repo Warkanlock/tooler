@@ -2,8 +2,6 @@ use crate::json_serializer::{CommandConfiguration, CommandList};
 use std::io::prelude::*;
 use std::{fs::File, path::Path, process};
 
-const BASE_PATH: &str = std::env!("BASE_PATH");
-
 pub fn all(commands: &[CommandList]) {
     for command in commands {
         println!(
@@ -30,7 +28,15 @@ fn run_on_childs(
     action: &CommandConfiguration,
     relative_child: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let final_name = format!("{}{}{}", BASE_PATH, relative_child, action.name);
+    
+    // for now, leave it here and .env variable instead
+    // next time we should move this variable inside configuration file
+    let base_path = std::env::var("BASE_PATH").unwrap_or_else(|err| {
+        eprintln!("There was an error trying to read output directory: {}", err);
+        process::exit(1);
+    });
+
+    let final_name = format!("{}{}{}", base_path, relative_child, action.name);
 
     // create root
     match action.file_type.as_str() {

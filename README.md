@@ -23,6 +23,31 @@ OPTIONS:
 1. Create your own replicable scaffolding configuration using the JSON configuration file.
 2. Run `tooler` to create folders or files on demand.
 
+# Configuration Spec
+
+```json
+{
+  "commands": [
+    {
+      "command": "example_command", // any string that you will use as a command name later on the CLI
+      "action": {
+        "name": "ExampleFolder", // name of the folder about to be created
+        "file_type": "folder", // type of action (folder or file, for now)
+        "childs": [
+            {   
+                "name": "index.js", // name of the file with its format
+                "file_type": "file", 
+                "example" : "import React from 'React'", 
+                "childs" : [],
+            }
+        ]
+      }
+    },
+  ]
+}
+
+```
+
 # Setup
 
 In order to run the program you need to specify two environment variables

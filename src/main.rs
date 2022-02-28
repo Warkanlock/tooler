@@ -65,6 +65,7 @@ mod tests {
 
     // we set this path as a test object for the configuration file
     const CONFIG_PATH_TEST: &str = "./src/tests/config.test.json";
+    const BASE_PATH_TEST: &str = "./src/tests/output/";
 
     #[test]
     fn read_env_variable() {
@@ -97,5 +98,32 @@ mod tests {
             assert_eq!(configuration.commands[0].command, "test-command");
             assert_eq!(configuration.commands[1].command, "test-view");
         })
+    }
+
+    #[test]
+    fn create_from_config() {
+        temp_env::with_vars(
+            vec![
+                ("CONFIG_PATH", Some(CONFIG_PATH_TEST)),
+                ("BASE_PATH", Some(BASE_PATH_TEST)),
+            ],
+            || {
+                let config_path = std::env::var("CONFIG_PATH").unwrap();
+                let output_path = std::env::var("BASE_PATH").unwrap();
+
+                let configuration = json_serializer::read_from_file(config_path).unwrap();
+
+                commands::run_command(&configuration.commands[0]);
+
+                let output_path_dir = std::path::Path::new(&output_path);
+
+                assert_eq!(std::path::Path::exists(output_path_dir), true);
+
+                // delete after test
+                std::fs::remove_dir_all(output_path_dir)
+                    .and_then(|_| std::fs::create_dir(output_path_dir))
+                    .unwrap();
+            },
+        )
     }
 }
