@@ -1,6 +1,6 @@
 # Toolers: scaffolding made easy
 
-Create a controlled ``folder>file`` structure for your team to use as a configuration file to prevent team mattes from creating their own structures or files by hand. Keep the configuration synchronized as a source of truth for the creation of ``components``, ``views``, ``services`` or whatever file you want to create in your project. Add more commands inside the configuration file as an action object.
+Establish a standardized directory and file hierarchy, serving as a centralized configuration blueprint, to ensure team-wide consistency. This will mitigate the risk of individual team members manually crafting divergent structures or files. You can use this configuration as the authoritative source for instantiating project components like ``views``, ``services``, or any other file types required. To extend functionality, enrich the configuration file with an "action object" containing additional command definitions.
 
 ![tooler](https://user-images.githubusercontent.com/13340320/155042226-f1e41bb4-c3c9-45ae-acad-d06da84e3373.gif)
 
@@ -50,14 +50,14 @@ OPTIONS:
 
 # Setup
 
-In order to run the program you need to specify two environment variables
+To run the program, you need to specify two environment variables
 
 Configuration path (you can point to different paths)
 ```
 export CONFIG_PATH=./src/config/example.config.json
 ```
 
-Directory output for commands (folder must exists before running the commands)
+Directory output for commands (folder must exist before running the bases)
 ```
 BASE_PATH=./src/target/
 ```
@@ -73,5 +73,3 @@ Creating scaffolding and folder>file structures is sometimes a headache, so I cr
 - [ ] File creation with example content
 - [ ] Customize commands (not only for creation)
 - [ ] More tests
-
-> Written and maintained by Warkanlock as PoC
